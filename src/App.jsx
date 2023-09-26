@@ -1,14 +1,20 @@
+import { BrowserRouter } from "react-router-dom";
+
 import { Container } from "react-bootstrap";
 
 import Header from "./components/Header";
+import Router from "./pages/Router";
 
 function App() {
   return (
-    <Container fluid className="main-container p-3">
-      <div className="content-container">
-        <Header />
-      </div>
-    </Container>
+    <BrowserRouter>
+      <Container fluid className="main-container p-3">
+        <div className="content-container">
+          <Header />
+          <Router />
+        </div>
+      </Container>
+    </BrowserRouter>
   );
 }
 
