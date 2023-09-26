@@ -7,5 +7,10 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  plugins: [react(), eslint()],
+  plugins: [
+    react(),
+    eslint({
+      exclude: ["/virtual:/**", "node_modules/**"],
+    }),
+  ],
 });
