@@ -1,0 +1,33 @@
+.brand-image {
+  height: 50px;
+  width: 150px;
+  @media (min-width: $screen-sm) {
+    width: 180px;
+  }
+}
+
+.nav-item {
+  color: azure;
+  font-weight: 600;
+  @media (max-width: $screen-sm) {
+    font-size: 14px;
+    line-height: 3;
+  }
+  @media (min-width: $screen-sm) and (max-width: $screen-md) {
+    font-size: 16px;
+    line-height: 2;
+  }
+  @media (min-width: $screen-md) {
+    font-size: 18px;
+    line-height: 2;
+  }
+  &:hover {
+    color: $color-white-brisket;
+  }
+}
+
+.navbar-nav {
+  .nav-link.active {
+    color: $color-dark-brisket;
+  }
+}
