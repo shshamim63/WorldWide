@@ -7,9 +7,13 @@
 }
 
 .nav-item {
-  color: azure;
+  color: $color-dark-brisket;
   font-weight: 600;
-  @media (max-width: $screen-sm) {
+  @media (max-width: $screen-xs) {
+    font-size: 14px;
+    line-height: 2;
+  }
+  @media (min-width: $screen-xs) and (max-width: $screen-sm) {
     font-size: 14px;
     line-height: 3;
   }
@@ -28,6 +32,27 @@
 
 .navbar-nav {
   .nav-link.active {
-    color: $color-dark-brisket;
+    color: $color-pink-light;
+  }
+}
+
+.nav-button {
+  background: $color-green-success;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: $color-dark-brisket;
+  height: 4vh;
+  &:hover {
+    background: $color-green-deem;
+    color: white !important;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin: 10px;
+    line-height: 1.5;
+  }
+  @media (min-width: $screen-sm) {
+    margin: 7px;
+    line-height: 1.2;
   }
 }

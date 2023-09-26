@@ -1,13 +1,7 @@
 import { useState } from "react";
 import logo from "../assets/logo.png";
-import {
-  Button,
-  Container,
-  Nav,
-  NavLink,
-  Navbar,
-  NavbarBrand,
-} from "react-bootstrap";
+import { Container, Nav, NavLink, Navbar, NavbarBrand } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [activeHeader, setActiveHeader] = useState("");
@@ -23,6 +17,8 @@ const Header = () => {
         </NavbarBrand>
         <Nav>
           <NavLink
+            as={Link}
+            to="/product"
             className={
               "nav-item" + (activeHeader == "product" ? " active" : "")
             }
@@ -31,6 +27,8 @@ const Header = () => {
             PRODUCT
           </NavLink>
           <NavLink
+            as={Link}
+            to="/pricing"
             className={
               "nav-item" + (activeHeader == "pricing" ? " active" : "")
             }
@@ -38,8 +36,8 @@ const Header = () => {
           >
             PRICING
           </NavLink>
-          <NavLink>
-            <Button>LOG IN</Button>
+          <NavLink as={Link} to="/login" className="nav-item nav-button">
+            LOG IN
           </NavLink>
         </Nav>
       </Container>
