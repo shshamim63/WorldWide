@@ -8,11 +8,9 @@ import Router from "./pages/Router";
 function App() {
   return (
     <BrowserRouter>
-      <Container fluid className="main-container p-3">
-        <div className="content-container">
-          <Header />
-          <Router />
-        </div>
+      <Container fluid className="main-container p-3 position-relative">
+        <Header />
+        <Router />
       </Container>
     </BrowserRouter>
   );

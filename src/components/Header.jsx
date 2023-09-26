@@ -10,9 +10,9 @@ const Header = () => {
     setActiveHeader(headerValue);
   }
   return (
-    <Navbar>
-      <Container fluid className="pl-5 pr-5">
-        <NavbarBrand>
+    <Navbar className="nav-container position-absolute">
+      <Container fluid className="nav-section-container">
+        <NavbarBrand as={Link} to="/" onClick={() => handleOnActive("")}>
           <img src={logo} alt="WorldWise" className="brand-image" />
         </NavbarBrand>
         <Nav>
@@ -36,7 +36,12 @@ const Header = () => {
           >
             PRICING
           </NavLink>
-          <NavLink as={Link} to="/login" className="nav-item nav-button">
+          <NavLink
+            as={Link}
+            to="/"
+            className="nav-item nav-button"
+            onClick={() => handleOnActive("")}
+          >
             LOG IN
           </NavLink>
         </Nav>

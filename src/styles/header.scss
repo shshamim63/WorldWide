@@ -1,4 +1,18 @@
+.nav-container {
+  width: 96vw;
+  top: 3;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.nav-section-container {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .brand-image {
+  margin-left: 5px;
   height: 50px;
   width: 150px;
   @media (min-width: $screen-sm) {
