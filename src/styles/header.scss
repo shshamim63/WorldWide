@@ -1,0 +1,70 @@
+.nav-container {
+  width: 96vw;
+  top: 3 !important;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.nav-section-container {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.brand-image {
+  margin-left: 5px;
+  height: 50px;
+  width: 150px;
+  @media (min-width: $screen-sm) {
+    width: 180px;
+  }
+}
+
+.nav-item {
+  color: white;
+  font-weight: 600;
+  @media (max-width: $screen-xs) {
+    font-size: 14px;
+    line-height: 2;
+  }
+  @media (min-width: $screen-xs) and (max-width: $screen-sm) {
+    font-size: 14px;
+    line-height: 3;
+  }
+  @media (min-width: $screen-sm) and (max-width: $screen-md) {
+    font-size: 16px;
+    line-height: 2;
+  }
+  @media (min-width: $screen-md) {
+    font-size: 18px;
+    line-height: 2;
+  }
+  &:hover {
+    color: $color-white-brisket;
+  }
+}
+
+.navbar-nav {
+  .nav-link.active {
+    color: $color-pink-light;
+  }
+}
+
+.nav-button {
+  background: $color-green-success;
+  border-radius: 5px;
+  color: white;
+  height: 4vh;
+  &:hover {
+    color: $color-dark-brisket !important;
+  }
+
+  @media (max-width: $screen-sm) {
+    margin: 10px;
+    line-height: 1.5;
+  }
+  @media (min-width: $screen-sm) {
+    margin: 7px;
+    line-height: 1.2;
+  }
+}
