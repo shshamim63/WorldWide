@@ -1,6 +1,6 @@
 .nav-container {
   width: 96vw;
-  top: 3;
+  top: 3 !important;
   left: 0;
   right: 0;
   margin: auto;
@@ -21,7 +21,7 @@
 }
 
 .nav-item {
-  color: $color-dark-brisket;
+  color: white;
   font-weight: 600;
   @media (max-width: $screen-xs) {
     font-size: 14px;
@@ -52,13 +52,11 @@
 
 .nav-button {
   background: $color-green-success;
-  border: 1px solid white;
   border-radius: 5px;
-  color: $color-dark-brisket;
+  color: white;
   height: 4vh;
   &:hover {
-    background: $color-green-deem;
-    color: white !important;
+    color: $color-dark-brisket !important;
   }
 
   @media (max-width: $screen-sm) {
