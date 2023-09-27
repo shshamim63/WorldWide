@@ -1,6 +1,9 @@
+import Header from "../components/Header";
+
 const HomePage = () => {
   return (
-    <main className="homepage-container">
+    <main className="homepage-container position-relative">
+      <Header />
       <section className="d-flex flex-column justify-content-center align-items-center">
         <h1 className="text-center homepage-header">
           You travel the world.
