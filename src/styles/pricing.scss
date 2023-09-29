@@ -16,14 +16,23 @@
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 3rem;
+  color: white;
 }
 
 .pricing-body {
   font-size: 1rem;
   margin-bottom: 2rem;
+  color: white;
 }
 
 .pricing-img {
   height: 35vh;
-  width: 35vw;
+  width: 100%;
+  @media (min-width: $screen-sm) {
+    height: 40vh;
+  }
+
+  @media (min-width: $screen-md) {
+    height: 45vh;
+  }
 }

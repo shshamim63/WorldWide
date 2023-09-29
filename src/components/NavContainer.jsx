@@ -36,7 +36,6 @@ const NavContainer = ({ activeHeader, handleOnActive }) => {
 NavContainer.propTypes = {
   activeHeader: PropTypes.string,
   handleOnActive: PropTypes.func,
-  children: PropTypes.children,
 };
 
 export default NavContainer;

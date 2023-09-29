@@ -18,6 +18,7 @@ const Header = () => {
           <img src={logo} alt="WorldWise" className="brand-image" />
         </NavbarBrand>
         <NavContainer
+          key={activeHeader}
           activeHeader={activeHeader}
           handleOnActive={handleOnActive}
         />

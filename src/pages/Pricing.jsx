@@ -7,8 +7,8 @@ const Pricing = () => {
     <main className="pricing-container position-relative">
       <Header />
       <section className="d-flex pricing-section align-items-center">
-        <Row>
-          <Col>
+        <Row className="justify-content-center">
+          <Col sm={8} md={7} lg={5}>
             <h2 className="pricing-header">
               Simple pricing.
               <br />
@@ -20,7 +20,7 @@ const Pricing = () => {
               fugit voluptatem iste.
             </p>
           </Col>
-          <Col>
+          <Col sm={8} md={7} lg={{ span: 6, offset: 1 }}>
             <img
               src={pricing}
               alt="overview of a large city with skyscrapers"
