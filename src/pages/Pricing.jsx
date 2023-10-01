@@ -1,11 +1,12 @@
+import PropTypes from "prop-types";
 import { Col, Row } from "react-bootstrap";
 import pricing from "../assets/img-2.jpg";
 import Header from "../components/Header";
 
-const Pricing = () => {
+const Pricing = ({ title }) => {
   return (
     <main className="page-container position-relative">
-      <Header />
+      <Header title={title} />
       <section className="d-flex page-section-container align-items-center">
         <Row className="justify-content-center">
           <Col sm={8} md={7} lg={5}>
@@ -31,6 +32,10 @@ const Pricing = () => {
       </section>
     </main>
   );
+};
+
+Pricing.prototype = {
+  title: PropTypes.string.isRequired,
 };
 
 export default Pricing;

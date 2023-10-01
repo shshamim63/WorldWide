@@ -1,11 +1,13 @@
+import PropTypes from "prop-types";
+
 import { useState } from "react";
 import logo from "../assets/logo.png";
 import { Container, Navbar, NavbarBrand } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import NavContainer from "./NavContainer";
 
-const Header = () => {
-  const [activeHeader, setActiveHeader] = useState("");
+const Header = ({ title }) => {
+  const [activeHeader, setActiveHeader] = useState(title);
 
   function handleOnActive(headerValue) {
     setActiveHeader(headerValue);
@@ -25,6 +27,10 @@ const Header = () => {
       </Container>
     </Navbar>
   );
+};
+
+Header.prototype = {
+  title: PropTypes.string.isRequired,
 };
 
 export default Header;

@@ -1,13 +1,15 @@
+import PropTypes from "prop-types";
+
 import product from "../assets/img-1.jpg";
 
 import Header from "../components/Header";
 
 import { Row, Col } from "react-bootstrap";
 
-const Product = () => {
+const Product = ({ title }) => {
   return (
     <main className="page-container position-relative">
-      <Header />
+      <Header title={title} />
       <section className="d-flex page-section-container align-items-center">
         <Row className="gy-5 justify-content-center">
           <Col sm={8} md={7} lg={5}>
@@ -35,6 +37,10 @@ const Product = () => {
       </section>
     </main>
   );
+};
+
+Product.prototype = {
+  title: PropTypes.string.isRequired,
 };
 
 export default Product;

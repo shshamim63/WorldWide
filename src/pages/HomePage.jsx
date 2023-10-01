@@ -1,9 +1,10 @@
+import PropTypes from "prop-types";
 import Header from "../components/Header";
 
-const HomePage = () => {
+const HomePage = ({ title }) => {
   return (
     <main className="homepage-container position-relative">
-      <Header />
+      <Header title={title} />
       <section className="d-flex flex-column justify-content-center align-items-center">
         <h1 className="text-center homepage-header">
           You travel the world.
@@ -18,6 +19,10 @@ const HomePage = () => {
       </section>
     </main>
   );
+};
+
+HomePage.protoTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 export default HomePage;
