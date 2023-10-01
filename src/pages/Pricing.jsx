@@ -4,17 +4,17 @@ import Header from "../components/Header";
 
 const Pricing = () => {
   return (
-    <main className="pricing-container position-relative">
+    <main className="page-container position-relative">
       <Header />
-      <section className="d-flex pricing-section align-items-center">
+      <section className="d-flex page-section-container align-items-center">
         <Row className="justify-content-center">
           <Col sm={8} md={7} lg={5}>
-            <h2 className="pricing-header">
+            <h2 className="page-header">
               Simple pricing.
               <br />
               Just $9/month.
             </h2>
-            <p className="pricing-body">
+            <p className="page-body">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
               vel labore mollitia iusto. Recusandae quos provident, laboriosam
               fugit voluptatem iste.
@@ -24,7 +24,7 @@ const Pricing = () => {
             <img
               src={pricing}
               alt="overview of a large city with skyscrapers"
-              className="pricing-img"
+              className="page-img"
             />
           </Col>
         </Row>

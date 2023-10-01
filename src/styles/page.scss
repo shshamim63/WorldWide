@@ -1,4 +1,4 @@
-.pricing-container {
+.page-container {
   height: 96vh;
   background: linear-gradient(rgba(36, 42, 46, 0.8), rgba(36, 42, 46, 0.8));
   background-position: center;
@@ -6,13 +6,13 @@
   background-size: cover;
 }
 
-.pricing-section {
+.page-section-container {
   width: 80%;
   margin: auto;
   height: 100%;
 }
 
-.pricing-header {
+.page-header {
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 3rem;
@@ -26,7 +26,7 @@
   }
 }
 
-.pricing-body {
+.page-body {
   font-size: 1rem;
   margin-bottom: 2rem;
   color: white;
@@ -35,7 +35,7 @@
   }
 }
 
-.pricing-img {
+.page-img {
   height: 35vh;
   width: 100%;
   @media (min-width: $screen-sm) {
