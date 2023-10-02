@@ -1,5 +1,5 @@
 const Map = () => {
-  return <div>Map</div>;
+  return <div className="map-container">Map</div>;
 };
 
 export default Map;
