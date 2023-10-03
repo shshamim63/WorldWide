@@ -1,5 +1,20 @@
-const CityList = () => {
-  return <div className="citylist-container">City List</div>;
+import Loader from "./Loader";
+import CityItem from "./CityItem";
+import Message from "./Message";
+
+const CityList = ({ cities, isLoading }) => {
+  if (isLoading) return <Loader />;
+  if (!cities.length)
+    return (
+      <Message message="Add your first city by clicking on a city on the map" />
+    );
+  return (
+    <ul className="citylist-container">
+      {cities.map((city) => (
+        <CityItem city={city} key={city.id} />
+      ))}
+    </ul>
+  );
 };
 
 export default CityList;
