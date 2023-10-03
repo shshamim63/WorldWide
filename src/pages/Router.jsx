@@ -6,6 +6,7 @@ import Pricing from "./Pricing";
 import NotFound from "./NotFound";
 import AppLayout from "./AppLayout";
 import CityList from "../components/CityList";
+import CountryList from "../components/CountryList";
 
 const Router = ({ cities, isLoading }) => {
   return (
@@ -18,7 +19,10 @@ const Router = ({ cities, isLoading }) => {
           index
           element={<CityList cities={cities} isLoading={isLoading} />}
         />
-        <Route path="countries" element={<p>Countries</p>} />
+        <Route
+          path="countries"
+          element={<CountryList cities={cities} isLoading={isLoading} />}
+        />
         <Route
           path="cities"
           element={<CityList cities={cities} isLoading={isLoading} />}
