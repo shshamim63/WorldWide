@@ -1,0 +1,48 @@
+.page-container {
+  height: 96vh;
+  background: linear-gradient(rgba(36, 42, 46, 0.8), rgba(36, 42, 46, 0.8));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page-section-container {
+  width: 80%;
+  margin: auto;
+  height: 100%;
+}
+
+.page-header {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+  color: white;
+  @media (max-width: $screen-md) {
+    text-align: center;
+    font-size: 2rem;
+  }
+  @media (min-width: $screen-md) and (max-width: $screen-lg) {
+    font-size: 2.5rem;
+  }
+}
+
+.page-body {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: white;
+  @media (max-width: $screen-md) {
+    text-align: center;
+  }
+}
+
+.page-img {
+  height: 35vh;
+  width: 100%;
+  @media (min-width: $screen-sm) {
+    height: 40vh;
+  }
+
+  @media (min-width: $screen-md) {
+    height: 45vh;
+  }
+}
