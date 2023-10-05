@@ -7,6 +7,8 @@ import NotFound from "./NotFound";
 import AppLayout from "./AppLayout";
 import CityList from "../components/CityList";
 import CountryList from "../components/CountryList";
+import City from "../components/City";
+import CityForm from "../components/CityForm";
 
 const Router = ({ cities, isLoading }) => {
   return (
@@ -27,7 +29,8 @@ const Router = ({ cities, isLoading }) => {
           path="cities"
           element={<CityList cities={cities} isLoading={isLoading} />}
         />
-        <Route path="form" element={<p>Form</p>} />
+        <Route path="cities/:id" element={<City />} />
+        <Route path="form" element={<CityForm />} />
       </Route>
       <Route path="*" element={<NotFound title="invalid" />} />
     </Routes>

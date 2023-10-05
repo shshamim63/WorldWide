@@ -10,7 +10,7 @@ const CountryList = ({ cities, isLoading }) => {
     );
 
   const counties = cities.reduce((arr, city) => {
-    if (!arr.map((el) => el.city).includes(city.country))
+    if (!arr.map((el) => el.country).includes(city.country))
       return [
         ...arr,
         { country: city.country, emoji: city.emoji, id: city.id },

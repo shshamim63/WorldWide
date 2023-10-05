@@ -1,0 +1,30 @@
+.city-form {
+  width: 100%;
+  background-color: $color-dark-2;
+  border-radius: 7px;
+  padding: 2rem 3rem;
+  gap: 1rem;
+  margin-top: 15%;
+}
+
+.form-loading {
+  opacity: 0.3;
+}
+
+.input {
+  gap: 0.2rem;
+  color: white;
+}
+
+.input-control {
+  background-color: $color-light-4;
+}
+
+.date-picker {
+  font-family: inherit;
+  font-size: 1.2rem;
+}
+
+.flag {
+  font-size: 1.5rem;
+}
