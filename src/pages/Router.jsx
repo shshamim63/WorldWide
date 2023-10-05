@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import HomePage from "./HomePage";
 import Product from "./Product";
@@ -17,10 +17,7 @@ const Router = ({ cities, isLoading }) => {
       <Route path="product" element={<Product title="product" />} />
       <Route path="pricing" element={<Pricing title="pricing" />} />
       <Route path="app" element={<AppLayout title="app" />}>
-        <Route
-          index
-          element={<CityList cities={cities} isLoading={isLoading} />}
-        />
+        <Route index element={<Navigate to="cities" />} />
         <Route
           path="countries"
           element={<CountryList cities={cities} isLoading={isLoading} />}

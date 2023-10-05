@@ -2,8 +2,8 @@ import { useState } from "react";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 
-const AppNav = () => {
-  const [currentTab, setCurrentTab] = useState("");
+const AppNav = ({ tab }) => {
+  const [currentTab, setCurrentTab] = useState(tab);
 
   const handleOnTabChange = (tab) => {
     setCurrentTab(tab);

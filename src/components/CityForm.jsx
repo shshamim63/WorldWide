@@ -1,10 +1,23 @@
 import { Form, Stack } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const CityForm = () => {
+  const navigate = useNavigate();
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const onReturnBack = (e) => {
+    e.preventDefault();
+    console.log("I am triggered");
+    navigate(-1);
+  };
+
   return (
-    <Form className="d-flex flex-column city-form">
+    <Form className="d-flex flex-column city-form" onSubmit={handleOnSubmit}>
       <Form.Group
         controlId="countryName"
         className="d-flex flex-column position-relative input"
@@ -25,8 +38,12 @@ const CityForm = () => {
         <Form.Control as="textarea" className="input-control" />
       </Form.Group>
       <Stack direction="horizontal">
-        <Button type=" btn-primary">Add</Button>
-        <Button type=" ms-auto btn-info">back</Button>
+        <Button type=" btn-primary" onClick={handleOnSubmit}>
+          Add
+        </Button>
+        <Button type=" ms-auto btn-info" handleOnClick={onReturnBack}>
+          back
+        </Button>
       </Stack>
     </Form>
   );

@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <div className="d-flex justify-content-center sidebar">
       <Logo />
-      <AppNav />
+      <AppNav tab="cities" />
       <Outlet />
       <footer className="sidebar-footer-container">
         <p className="sidebar-footer-copyright">
