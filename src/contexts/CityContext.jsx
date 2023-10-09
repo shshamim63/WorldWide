@@ -4,11 +4,12 @@ import { createContext, useState, useEffect } from "react";
 
 const BASE_URL = "http://localhost:8000";
 
-const CityContext = createContext();
+const CitiesContext = createContext();
 
-const CityProvider = ({ children }) => {
+const CitiesProvider = ({ children }) => {
   const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [currentCity, setCurrentCity] = useState({});
 
   useEffect(() => {
     async function getCities() {
@@ -25,16 +26,30 @@ const CityProvider = ({ children }) => {
     getCities();
   }, []);
 
+  const getCity = async (id) => {
+    try {
+      setIsLoading(true);
+      const res = await axios.get(`${BASE_URL}/cities/${id}`);
+      setCurrentCity(res.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <CityContext.Provider
+    <CitiesContext.Provider
       value={{
         cities,
         isLoading,
+        currentCity,
+        getCity,
       }}
     >
       {children}
-    </CityContext.Provider>
+    </CitiesContext.Provider>
   );
 };
 
-export { CityProvider, CityContext };
+export { CitiesProvider, CitiesContext };

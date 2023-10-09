@@ -12,7 +12,7 @@ const CityItem = ({ city }) => {
   return (
     <li>
       <Link
-        className="city-info-container"
+        className="city-item-container"
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
       >
         <span className="emoji">{emoji}</span>
