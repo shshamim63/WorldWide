@@ -1,19 +1,11 @@
 import { Form, Stack } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import Button from "./Button";
-import { useNavigate } from "react-router-dom";
+import BackButton from "./BackButton";
 
 const CityForm = () => {
-  const navigate = useNavigate();
-
   const handleOnSubmit = (e) => {
     e.preventDefault();
-  };
-
-  const onReturnBack = (e) => {
-    e.preventDefault();
-    console.log("I am triggered");
-    navigate(-1);
   };
 
   return (
@@ -41,9 +33,7 @@ const CityForm = () => {
         <Button type=" btn-primary" onClick={handleOnSubmit}>
           Add
         </Button>
-        <Button type=" ms-auto btn-info" handleOnClick={onReturnBack}>
-          back
-        </Button>
+        <BackButton />
       </Stack>
     </Form>
   );

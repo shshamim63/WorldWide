@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { formatDate } from "../helper/date";
+import useCities from "../hooks/useCities";
 
 const CityItem = ({ city }) => {
   const { cityName, emoji, date, id, position } = city;
+
+  const { currentCity } = useCities();
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -12,7 +15,9 @@ const CityItem = ({ city }) => {
   return (
     <li>
       <Link
-        className="city-item-container"
+        className={`city-item-container ${
+          id === currentCity.id ? "recently-visited" : ""
+        }`}
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
       >
         <span className="emoji">{emoji}</span>
