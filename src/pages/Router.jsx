@@ -10,7 +10,7 @@ import CountryList from "../components/CountryList";
 import City from "../components/City";
 import CityForm from "../components/CityForm";
 
-const Router = ({ cities, isLoading }) => {
+const Router = () => {
   return (
     <Routes>
       <Route index element={<HomePage title="home" />} />
@@ -18,14 +18,8 @@ const Router = ({ cities, isLoading }) => {
       <Route path="pricing" element={<Pricing title="pricing" />} />
       <Route path="app" element={<AppLayout title="app" />}>
         <Route index element={<Navigate to="cities" />} />
-        <Route
-          path="countries"
-          element={<CountryList cities={cities} isLoading={isLoading} />}
-        />
-        <Route
-          path="cities"
-          element={<CityList cities={cities} isLoading={isLoading} />}
-        />
+        <Route path="countries" element={<CountryList />} />
+        <Route path="cities" element={<CityList />} />
         <Route path="cities/:id" element={<City />} />
         <Route path="form" element={<CityForm />} />
       </Route>
