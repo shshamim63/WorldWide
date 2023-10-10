@@ -7,3 +7,9 @@
 .map {
   height: 100%;
 }
+
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: $color-dark-2;
+  color: white;
+  font-weight: 600;
+}

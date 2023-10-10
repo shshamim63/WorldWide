@@ -2,8 +2,13 @@ import { Form, Stack } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import Button from "./Button";
 import BackButton from "./BackButton";
+import { useSearchParams } from "react-router-dom";
 
 const CityForm = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [searchParams, setSearchParams] = useSearchParams();
+  const lat = searchParams.get("lat");
+  const lng = searchParams.get("lng");
   const handleOnSubmit = (e) => {
     e.preventDefault();
   };

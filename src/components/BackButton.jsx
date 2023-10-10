@@ -7,7 +7,6 @@ const BackButton = () => {
 
   const onReturnBack = (e) => {
     e.preventDefault();
-    console.log("I am triggered");
     navigate(-1);
   };
 
