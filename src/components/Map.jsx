@@ -1,8 +1,7 @@
-/* eslint-disable no-unused-vars */
 import "leaflet/dist/leaflet.css";
 
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   MapContainer,
   TileLayer,
@@ -16,6 +15,7 @@ import useCities from "../hooks/useCities";
 import { useGeolocation } from "../hooks/useGeolocation";
 
 import Button from "./Button";
+import { useUrlPosition } from "../hooks/useUrlPosition";
 
 const ChangeCenter = ({ position }) => {
   const map = useMap();
@@ -41,12 +41,9 @@ const Map = () => {
     position: geoLocationPosition,
     getPosition,
   } = useGeolocation({ defaultPosition: null });
+  const [mapLat, mapLng] = useUrlPosition();
 
-  const [searchParams, setSearchParams] = useSearchParams();
   const [mapPosition, setMapPosition] = useState([40, 0]);
-
-  const mapLat = searchParams.get("lat");
-  const mapLng = searchParams.get("lng");
 
   useEffect(() => {
     if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
