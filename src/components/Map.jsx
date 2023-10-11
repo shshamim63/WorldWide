@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import "leaflet/dist/leaflet.css";
 
+import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   MapContainer,
@@ -12,7 +13,9 @@ import {
 } from "react-leaflet";
 
 import useCities from "../hooks/useCities";
-import { useEffect, useState } from "react";
+import { useGeolocation } from "../hooks/useGeolocation";
+
+import Button from "./Button";
 
 const ChangeCenter = ({ position }) => {
   const map = useMap();
@@ -33,6 +36,11 @@ const DetectClick = () => {
 
 const Map = () => {
   const { cities } = useCities();
+  const {
+    isLoading: isLoadingPosition,
+    position: geoLocationPosition,
+    getPosition,
+  } = useGeolocation({ defaultPosition: null });
 
   const [searchParams, setSearchParams] = useSearchParams();
   const [mapPosition, setMapPosition] = useState([40, 0]);
@@ -44,8 +52,18 @@ const Map = () => {
     if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
   }, [mapLat, mapLng]);
 
+  useEffect(() => {
+    if (geoLocationPosition)
+      setMapPosition([geoLocationPosition.lat, geoLocationPosition.lng]);
+  }, [geoLocationPosition]);
+
   return (
     <div className="map-container">
+      {!geoLocationPosition && (
+        <Button type=" position" handleOnClick={getPosition}>
+          {isLoadingPosition ? "Loading..." : "Use your position"}
+        </Button>
+      )}
       <MapContainer center={mapPosition} zoom={10} className="map">
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
