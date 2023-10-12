@@ -38,6 +38,18 @@ const CitiesProvider = ({ children }) => {
     }
   };
 
+  const createCity = async (newCity) => {
+    try {
+      setIsLoading(true);
+      const res = await axios.post(`${BASE_URL}/cities`, newCity);
+      setCities((cities) => [...cities, res.data]);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <CitiesContext.Provider
       value={{
@@ -45,6 +57,7 @@ const CitiesProvider = ({ children }) => {
         isLoading,
         currentCity,
         getCity,
+        createCity,
       }}
     >
       {children}

@@ -11,12 +11,20 @@ import { convertToEmoji } from "../helper/country";
 import Button from "./Button";
 import BackButton from "./BackButton";
 import Loader from "./Loader";
+import Message from "./Message";
+import useCities from "../hooks/useCities";
+import { useNavigate } from "react-router-dom";
 
 const BASE_GEO_LOCATION_URL =
   "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
 const CityForm = () => {
   const [lat, lng] = useUrlPosition();
+
+  const { createCity, isLoading } = useCities();
+
+  const navigate = useNavigate();
+
   const [cityName, setCityName] = useState("");
   const [country, setCountry] = useState("");
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -59,15 +67,21 @@ const CityForm = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    const newCity = {
+      cityName,
+      country,
+      date: currentDate,
+      emoji,
+      notes,
+      position: { lat, lng },
+    };
+    createCity(newCity);
+    navigate("/app/cities");
   };
 
   if (isLoadingGeoCoding) return <Loader />;
   if (!isLoadingGeoCoding && geoError) {
-    return (
-      <div className="error-container">
-        <p className="error-context">{geoError}</p>
-      </div>
-    );
+    return <Message message={geoError} />;
   }
 
   if (!isLoadingGeoCoding && !lat && !lng) {
@@ -78,7 +92,12 @@ const CityForm = () => {
     );
   }
   return (
-    <Form className="d-flex flex-column city-form" onSubmit={handleOnSubmit}>
+    <Form
+      className={`d-flex flex-column city-form${
+        isLoading ? " form-loading" : ""
+      }`}
+      onSubmit={handleOnSubmit}
+    >
       <Form.Group
         controlId="countryName"
         className="d-flex flex-column position-relative input"
