@@ -5,11 +5,11 @@ import useCities from "../hooks/useCities";
 const CityItem = ({ city }) => {
   const { cityName, emoji, date, id, position } = city;
 
-  const { currentCity } = useCities();
+  const { currentCity, deleteCity } = useCities();
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(e);
+    deleteCity(id);
   };
 
   return (
