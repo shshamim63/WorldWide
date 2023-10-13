@@ -74,6 +74,8 @@ const CitiesProvider = ({ children }) => {
   }, []);
 
   const getCity = async (id) => {
+    if (Number(id) === currentCity.id) return;
+
     try {
       dispatch({ type: "loading" });
       const res = await axios.get(`${BASE_URL}/cities/${id}`);
