@@ -1,9 +1,13 @@
 import Loader from "./Loader";
 import CountryItem from "./CountryItem";
 import Message from "./Message";
+import useCities from "../hooks/useCities";
 
-const CountryList = ({ cities, isLoading }) => {
+const CountryList = () => {
+  const { cities, isLoading } = useCities();
+
   if (isLoading) return <Loader />;
+
   if (!cities.length)
     return (
       <Message message="Add your first city by clicking on a city on the map" />

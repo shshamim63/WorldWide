@@ -1,52 +1,52 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 73930385
-    },
-    {
-      "cityName": "Madrid",
+      "cityName": "Cuevas de Vinroma",
       "country": "Spain",
+      "date": "2023-10-12T06:30:31.569Z",
       "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
       "notes": "",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
+        "lat": "40.35805621890491",
+        "lng": "0.15249902394408377"
       },
-      "id": 17806751
+      "id": 98443200
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": 98443197
-    },
-    {
-      "cityName": "Nijar",
+      "cityName": "Benassal",
       "country": "Spain",
+      "date": "2023-10-12T06:36:32.349Z",
       "emoji": "🇪🇸",
-      "date": "2023-04-03T07:47:59.202Z",
       "notes": "",
       "position": {
-        "lat": "36.967508314568164",
-        "lng": "-2.13128394200588"
+        "lat": "40.39990182440178",
+        "lng": "-0.14848211028890113"
       },
-      "id": 98443198
+      "id": 98443201
+    },
+    {
+      "cityName": "Ostersund",
+      "country": "Sweden",
+      "date": "2023-10-13T15:03:46.811Z",
+      "emoji": "🇸🇪",
+      "notes": "",
+      "position": {
+        "lat": "63.23362741232569",
+        "lng": "14.758003578376876"
+      },
+      "id": 98443202
+    },
+    {
+      "cityName": "Daneborg",
+      "country": "Greenland",
+      "date": "2023-10-13T15:03:52.028Z",
+      "emoji": "🇬🇱",
+      "notes": "",
+      "position": {
+        "lat": "75.14077784070429",
+        "lng": "-34.028754828282125"
+      },
+      "id": 98443203
     }
   ]
 }
