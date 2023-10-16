@@ -1,0 +1,27 @@
+.login-container {
+  background-color: $color-dark-1;
+  height: 96vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-form {
+  background-color: $color-dark-2;
+  border-radius: 7px;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  top: 30%;
+
+  @media (max-width: $screen-sm) {
+    width: 75%;
+    left: 12%;
+  }
+
+  @media (min-width: $screen-sm) {
+    width: 40%;
+    left: 30%;
+  }
+}

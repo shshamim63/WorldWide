@@ -23,7 +23,7 @@ const NavContainer = ({ activeHeader, handleOnActive }) => {
       </NavLink>
       <NavLink
         as={Link}
-        to="/"
+        to="/login"
         className="nav-item nav-button"
         onClick={() => handleOnActive("")}
       >
