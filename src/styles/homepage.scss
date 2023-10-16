@@ -27,3 +27,15 @@
   width: 50vw;
   font-weight: 300;
 }
+
+.home-page-start-btn {
+  display: inline-block;
+  background-color: $color-brand-2;
+  color: $color-dark-1;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+}

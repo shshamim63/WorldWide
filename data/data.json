@@ -48,5 +48,14 @@
       },
       "id": 98443203
     }
+  ],
+  "users": [
+    {
+      "email": "shshamim63@gmail.com",
+      "name": "Shakhawat",
+      "password": "123456789",
+      "avatar": "https://i.pravatar.cc/100?i=zz",
+      "id": 98443200
+    }
   ]
 }
