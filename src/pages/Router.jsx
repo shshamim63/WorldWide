@@ -10,6 +10,7 @@ import CountryList from "../components/CountryList";
 import City from "../components/City";
 import CityForm from "../components/CityForm";
 import Login from "./Login";
+import ProtectedRoute from "./ProtectedRoute";
 
 const Router = () => {
   return (
@@ -18,7 +19,14 @@ const Router = () => {
       <Route path="login" element={<Login title="login" />} />
       <Route path="product" element={<Product title="product" />} />
       <Route path="pricing" element={<Pricing title="pricing" />} />
-      <Route path="app" element={<AppLayout title="app" />}>
+      <Route
+        path="app"
+        element={
+          <ProtectedRoute>
+            <AppLayout title="app" />
+          </ProtectedRoute>
+        }
+      >
         <Route index element={<Navigate to="cities" />} />
         <Route path="countries" element={<CountryList />} />
         <Route path="cities" element={<CityList />} />

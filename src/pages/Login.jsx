@@ -22,9 +22,9 @@ const Login = ({ title }) => {
   }, [isAuthenticated, navigate]);
 
   return (
-    <main className="login-container position-relative">
+    <main className="page-container position-relative">
       <Header title={title} />
-      <Form className="login-form" onSubmit={handleSubmit}>
+      <Form className="login-form position-absolute" onSubmit={handleSubmit}>
         {error && !isAuthenticated && <p>{error}</p>}
         <Form.Group>
           <Form.Label className="text-white fw-bold">Email</Form.Label>
