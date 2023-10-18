@@ -12,30 +12,59 @@
 
 .homepage-container section {
   height: 85vh;
-  gap: 2.5rem;
+
+  @media (max-width: $screen-xs) {
+    gap: 4.5rem;
+  }
+
+  @media (min-width: $screen-xs) {
+    gap: 2.5rem;
+  }
 }
 
 .homepage-header {
   color: white;
-  font-size: 3rem;
-  line-height: 1.3;
+
+  @media (max-width: $screen-xs) {
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+
+  @media (min-width: $screen-xs) {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
 }
 
 .homepage-body {
   color: white;
-  font-size: 1.2rem;
-  width: 50vw;
   font-weight: 300;
+
+  @media (max-width: $screen-xs) {
+    font-size: 1.1rem;
+    line-height: 1.1;
+    width: 90%;
+  }
+  @media (min-width: $screen-xs) {
+    font-size: 1.2rem;
+    line-height: 1.1;
+    width: 50vw;
+  }
 }
 
 .home-page-start-btn {
   display: inline-block;
   background-color: $color-brand-2;
-  color: $color-dark-1;
+  color: $color-light-2;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 1rem;
   font-weight: 600;
   padding: 0.8rem 1rem;
   border-radius: 5px;
+  @media (max-width: $screen-xs) {
+    font-size: 0.8rem;
+  }
+  @media (min-width: $screen-xs) {
+    font-size: 1rem;
+  }
 }

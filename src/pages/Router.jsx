@@ -6,7 +6,7 @@ import CountryList from "../components/CountryList";
 import City from "../components/City";
 import CityForm from "../components/CityForm";
 import ProtectedRoute from "./ProtectedRoute";
-import { Spinner } from "react-bootstrap";
+import FullPageSpinner from "../components/FullPageSpinner";
 
 const HomePage = lazy(() => import("./HomePage"));
 const Product = lazy(() => import("./Product"));
@@ -17,7 +17,7 @@ const NotFound = lazy(() => import("./NotFound"));
 
 const Router = () => {
   return (
-    <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<FullPageSpinner />}>
       <Routes>
         <Route index element={<HomePage title="home" />} />
         <Route path="login" element={<Login title="login" />} />
