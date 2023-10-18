@@ -55,7 +55,7 @@ const AuthProvider = ({ children }) => {
     try {
       const res = await axios.get(`${BASE_URL}/users`);
       const currentUser = authenicateUser(res.data, email);
-      console.log("User", currentUser);
+
       if (currentUser) {
         if (currentUser.passowrd === passowrd) {
           dispatch({
@@ -69,7 +69,6 @@ const AuthProvider = ({ children }) => {
         dispatch({ type: "login/failed", payload: "User does not exist" });
       }
     } catch (error) {
-      console.log(error.message);
       dispatch({ type: "login/failed", payload: "Authentication failed" });
     }
   };
@@ -77,6 +76,7 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     dispatch({ type: "logout" });
   };
+
   return (
     <AuthContext.Provider
       value={{ login, logout, user, isAuthenticated, error }}

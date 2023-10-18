@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useCallback, useEffect, useReducer } from "react";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -73,17 +73,20 @@ const CitiesProvider = ({ children }) => {
     getCities();
   }, []);
 
-  const getCity = async (id) => {
-    if (Number(id) === currentCity.id) return;
+  const getCity = useCallback(
+    async (id) => {
+      if (Number(id) === currentCity.id) return;
 
-    try {
-      dispatch({ type: "loading" });
-      const res = await axios.get(`${BASE_URL}/cities/${id}`);
-      dispatch({ payload: res.data, type: "city/loaded" });
-    } catch (error) {
-      dispatch({ type: "rejected", payload: error.message });
-    }
-  };
+      try {
+        dispatch({ type: "loading" });
+        const res = await axios.get(`${BASE_URL}/cities/${id}`);
+        dispatch({ payload: res.data, type: "city/loaded" });
+      } catch (error) {
+        dispatch({ type: "rejected", payload: error.message });
+      }
+    },
+    [currentCity.id]
+  );
 
   const createCity = async (newCity) => {
     try {
