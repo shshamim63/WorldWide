@@ -1,0 +1,34 @@
+#not-found-page {
+  background: none !important;
+}
+
+.not-foun-image {
+  height: 70vh;
+  width: 65vw;
+  margin: auto;
+}
+
+.apology-message {
+  width: 50%;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: $color-dark-2;
+  margin: auto;
+  text-align: center;
+}
+
+.back-to-home-btn {
+  margin: auto;
+  background: $color-blue-primary;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.9rem;
+  @media (max-width: $screen-xs) {
+    width: 50%;
+  }
+
+  @media (min-width: $screen-xs) {
+    width: 30%;
+  }
+}

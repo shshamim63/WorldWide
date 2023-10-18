@@ -31,6 +31,7 @@ const Login = ({ title }) => {
           <Form.Control
             type="email"
             placeholder="Enter email"
+            autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -41,6 +42,7 @@ const Login = ({ title }) => {
             type="password"
             placeholder="Password"
             value={password}
+            autoComplete="current-password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
